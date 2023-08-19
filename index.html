@@ -16,25 +16,52 @@
   <body>
     <div class="container">
       <div class="container-form">
-        <form class="center-form" action="#" method="get" onsubmit="return false">
-          <input
-            type="text"
-            name="nmTarefa"
-            id="idTarefa"
-            placeholder="Insira um texto..."
-          />
-            <button>+</button>
+        <form
+          class="center-form"
+          action="#"
+          method="get"
+          onsubmit="return false"
+        >
+          <div>
+            <input
+              type="text"
+              name="descrição"
+              id="idDescricao"
+              placeholder="Insira uma descrição..."
+            />
+            <input
+              type="text"
+              name="autor"
+              id="idAutor"
+              placeholder="Insira um autor..."
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="departamento"
+              id="idDepartamento"
+              placeholder="Insira um departamento..."
+            /><input
+              type="text"
+              name="importância"
+              id="idImportancia"
+              placeholder="Insira uma importância..."
+            />
+          </div>
+          <button class="send">+</button>
         </form>
       </div>
       <div class="conteudo-container">
         <table>
-            <tr>
-              <th>Descrição</th>
-              <th>Autor</th>
-              <th>Departamento</th>
-              <th>Importância</th>
-            </tr>
-          </table>
+          <tr>
+            <th>Descrição</th>
+            <th>Autor</th>
+            <th>Departamento</th>
+            <th>Importância</th>
+            <th>Apagar</th>
+          </tr>
+        </table>
       </div>
     </div>
     <script src="js/script.js"></script>

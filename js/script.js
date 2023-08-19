@@ -1,34 +1,31 @@
-let listaTarefa = []
-let lista = document.querySelector('table')
-let botao = document.querySelector('button')
-let tarefa = document.querySelector('#idTarefa') 
+let tabela = document.querySelector("table");
+let botao = document.querySelector(".send");
+let Descricao = document.querySelector("#idDescricao");
+let Autor = document.querySelector("#idAutor");
+let Departamento = document.querySelector("#idDepartamento");
+let Importancia = document.querySelector("#idImportancia");
 
-console.log(document.querySelector('.teste'))
+botao.addEventListener("click", function () {
+  tabela.innerHTML += `<tr>
+      <td>${Descricao.value}</td>
+      <td>${Autor.value}</td>
+      <td>${Departamento.value}</td>
+      <td>${Importancia.value}</td>
+      <td class="center-button-delete"><button class="delete"></button></td>
+      </tr>`;
 
-botao.addEventListener('click', function(){
-    listaTarefa.push(tarefa.value)
-    lista.innerHTML = `<tr>
-    <th>Descrição</th>
-    <th>Autor</th>
-    <th>Departamento</th>
-    <th>Importância</th>
-  </tr>`
-  console.log(document.querySelector('#idTarefa') )
-    listaTarefa.forEach((item, i)=>{
-        lista.innerHTML += `<tr>
-        <td>${item}</td>
-        <td>João Silva</td>
-        <td>Departamento de Vendas</td>
-        <td>Alta</td>
-    </tr>`
-    })
-    tarefa.value = ''
+  Descricao.value = "";
+  Autor.value = "";
+  Departamento.value = "";
+  Importancia.value = "";
+  tabela.value = "";
+});
+
+//função para apagar 
+
+tabela.addEventListener("click", function(event) {
+  let elementoClicado = event.target;
+  if (elementoClicado.classList.contains("delete")) {
+      elementoClicado.parentNode.parentNode.remove();
+  }
 })
-
-function apagar(i){
-    listaTarefa.splice(i,1)
-    lista.innerHTML = ''
-    listaTarefa.forEach((item, i)=>{
-        lista.innerHTML += `<li>${item} <button onclick="apagar('${i}')"> X </button> </li>`
-    })
-}
