@@ -32,10 +32,3 @@ function apagar(i){
         lista.innerHTML += `<li>${item} <button onclick="apagar('${i}')"> X </button> </li>`
     })
 }
-
-{/* <tr>
-    <td>Relatório de Vendas</td>
-    <td>João Silva</td>
-    <td>Departamento de Vendas</td>
-    <td>Alta</td>
-</tr> */}
